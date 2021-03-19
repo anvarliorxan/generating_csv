@@ -22,8 +22,8 @@ def generate_data_to_csv_celery_task(id):
     csv_file = ContentFile(csv_buffer.getvalue().encode('utf-8'))
 
     file = CSVFiles()
-    file.user = csv_data.user
-    file.csv_data = csv_data
+    file.user = c.user
+    file.csv_data_id = c.id
     file.save()
     file.file.save('output.csv', csv_file)
 
