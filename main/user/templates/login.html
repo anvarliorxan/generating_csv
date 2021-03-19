@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Work Scout</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+
+
+</head>
+
+<body>
+<div id="wrapper">
+
+
+    <!-- Header
+    ================================================== -->
+    <div class="clearfix"></div>
+
+
+    <!-- Container -->
+    <div class="container">
+
+        <div class="my-account">
+
+
+            <div class="tabs-container">
+                <!-- Login -->
+                <div class="tab-content" id="tab1" style="display: none;">
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <div class="notification {{ message.tags }}"><h5>{{ message }}</h5></div>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <form action="{% url 'user:login' %}" method="post" class="login">
+                        {% csrf_token %}
+                        {{ form }}
+
+                        <p class="form-row">
+                            <input formnovalidate type="submit" class="button border fw margin-top-10" name="login"
+                                   value="Login"/>
+                        </p>
+
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer
+    ================================================== -->
+    <div class="margin-top-30"></div>
+
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+</div>
+<!-- Wrapper / End -->
+
+
+<!-- Scripts
+================================================== -->
+<script src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+<script src="{% static 'scripts/custom.js' %}"></script>
+<script src="{% static 'scripts/jquery.superfish.js' %}"></script>
+<script src="{% static 'scripts/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.themepunch.showbizpro.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'scripts/chosen.jquery.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'scripts/waypoints.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.jpanelmenu.js' %}"></script>
+<script src="{% static 'scripts/stacktable.js' %}"></script>
+<script src="{% static 'scripts/slick.min.js' %}"></script>
+<script src="{% static 'scripts/headroom.min.js' %}"></script>
+
+
+</body>
+</html>

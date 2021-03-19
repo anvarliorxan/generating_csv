@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Work Scout</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+
+
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+</head>
+
+<body>
+<div id="wrapper">
+
+
+    <!-- Header
+    ================================================== -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="sixteen columns">
+
+
+                <!-- Menu -->
+                <nav id="navigation" class="menu">
+                    <ul id="responsive">
+                        <li><a id="current" href="{% url 'csv:cvs-list' %}">Shemas</a>
+                        </li>
+                    </ul>
+
+
+                    <ul class="responsive float-right">
+                        <li><h4>Hello , {{ request.user.username }}</h4></li>
+                        <li><a href="my-account.html"><i class="fa fa-lock"></i> Log In</a></li>
+                    </ul>
+
+                </nav>
+
+                <!-- Navigation -->
+                <div id="mobile-navigation">
+                    <a href="#menu" class="menu-trigger"><i class="fa fa-reorder"></i> Menu</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+
+
+    <!-- Titlebar
+    ================================================== -->
+
+    <!-- Dashboard -->
+    <div id="dashboard">
+
+        <!-- Navigation
+        ================================================== -->
+
+        <!-- Responsive Navigation Trigger -->
+        <a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Dashboard Navigation</a>
+
+
+        <!-- Navigation / End -->
+
+
+        <!-- Content
+        ================================================== -->
+        <div class="dashboard-content">
+
+
+            <!-- Titlebar -->
+            <div id="titlebar">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Csv Data</h2>
+                        <!-- Breadcrumbs -->
+                        <nav id="breadcrumbs">
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Table-->
+                <div class="col-lg-12 col-md-12">
+
+                    <div class="dashboard-list-box margin-top-0">
+                        <h4>Data Details</h4>
+                        <div class="dashboard-list-box-content">
+
+                            <div class="submit-page">
+
+
+                                <form method="post" class="login">
+                                    {% csrf_token %}
+                                    {{ form }}
+
+                                    <p class="form-row">
+                                        <input formnovalidate type="submit" class="button border fw margin-top-10"
+                                               name="Edit" value="Edit"/>
+                                    </p>
+
+                                </form>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Copyrights -->
+                <div class="col-md-12">
+                    <div class="copyrights">© 2019 WorkScout. All Rights Reserved.</div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Content / End -->
+
+
+    </div>
+    <!-- Dashboard / End -->
+
+
+</div>
+<!-- Wrapper / End -->
+
+
+<!-- Scripts
+================================================== -->
+<script src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+<script src="{% static 'scripts/custom.js' %}"></script>
+<script src="{% static 'scripts/jquery.superfish.js' %}"></script>
+<script src="{% static 'scripts/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.themepunch.showbizpro.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'scripts/chosen.jquery.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'scripts/waypoints.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.jpanelmenu.js' %}"></script>
+<script src="{% static 'scripts/stacktable.js' %}"></script>
+<script src="{% static 'scripts/slick.min.js' %}"></script>
+<script src="{% static 'scripts/headroom.min.js' %}"></script>
+
+
+</body>
+</html>
