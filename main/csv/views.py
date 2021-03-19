@@ -49,6 +49,5 @@ def deleteCsvData(request, id):
 
 
 def generateDataToCsv(request, id):
-    print('dasdsadas')
     generate_data_to_csv_celery_task.delay(id)
     return redirect('csv:cvs-list')
