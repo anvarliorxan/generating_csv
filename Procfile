@@ -1,3 +1,3 @@
 web: gunicorn config.wsgi
 
-worker: python manage.py celery worker -E
+worker: celery -A main.taskapp worker
