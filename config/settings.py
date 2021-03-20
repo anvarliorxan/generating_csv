@@ -123,8 +123,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "main/static"), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'main/media')
-MEDIA_URL = 'main/media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CELERY_BROKER_URL = 'redis://:p13fc3eb5690a9e6efeddc7f632d21854c4af97703e03c6e55bf22f8ee0344a12@ec2-107-23-88-104.compute-1.amazonaws.com:27149'
 CELERY_RESULT_BACKEND = 'redis://:p13fc3eb5690a9e6efeddc7f632d21854c4af97703e03c6e55bf22f8ee0344a12@ec2-107-23-88-104.compute-1.amazonaws.com:27149'
